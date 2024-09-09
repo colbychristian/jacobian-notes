@@ -1,5 +1,8 @@
 pypdf
 langchain
+langchain_community
+langchain-chroma
 chromadb # Vector storage
 pytest
 boto3
+langchain-aws`
