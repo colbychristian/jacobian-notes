@@ -2,12 +2,10 @@ import argparse
 import os
 import shutil
 from langchain_community.document_loaders import PyPDFDirectoryLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from get_embedding_function import get_embedding_function
-from langchain_community.vectorstores.chroma import Chroma
-
-
+from langchain_community.vectorstores import Chroma
 
 
 CHROMA_PATH = "chroma"
@@ -101,7 +99,6 @@ def calculate_chunk_ids(chunks):
         chunk.metadata["id"] = chunk_id
 
     return chunks
-
 
 def clear_database():
     if os.path.exists(CHROMA_PATH):
